@@ -38,10 +38,10 @@
 .lab-card__title {
   margin: 0;
   padding-left: 0;
-  font-size: clamp(32px, 4.8vw, 48px);
+  font-size: var(--nav-copy-size);
   font-weight: 400;
-  line-height: 0.92;
-  letter-spacing: -0.045em;
+  line-height: 1.42;
+  letter-spacing: 0.015em;
   overflow-wrap: anywhere;
 }
 
@@ -69,9 +69,9 @@
 }
 
 .lab-card .row-preview__title {
-  font-size: clamp(20px, 3vw, 30px);
-  line-height: 1;
-  letter-spacing: -0.025em;
+  font-size: var(--nav-copy-size);
+  line-height: 1.42;
+  letter-spacing: 0.015em;
   text-transform: none;
 }
 
@@ -86,11 +86,6 @@
   .lab-card__title,
   .lab-card__text {
     padding: 0;
-  }
-
-  .lab-card__title {
-    max-width: 18ch;
-    font-size: 38px;
   }
 
   .lab-card__text p {

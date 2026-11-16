@@ -13,12 +13,17 @@
   padding-bottom: 80px;
 }
 
+.lab .gallery-frame {
+  width: min(100%, 720px);
+}
+
 .lab-card {
   text-decoration: none;
 }
 
 .lab-card__grid {
-  min-height: 220px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-height: 156px;
   align-items: stretch;
 }
 
@@ -27,16 +32,16 @@
   display: flex;
   align-items: center;
   min-width: 0;
-  padding: 24px 18px;
+  padding: 8px 10px;
 }
 
 .lab-card__title {
   margin: 0;
   padding-left: 0;
-  font-size: clamp(26px, 3.8vw, 42px);
+  font-size: clamp(32px, 4.8vw, 48px);
   font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -0.025em;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
   overflow-wrap: anywhere;
 }
 
@@ -55,14 +60,27 @@
 
 .lab-card__image img {
   width: 100%;
-  height: auto;
+  height: 156px;
+  object-fit: cover;
+}
+
+.lab-card .row-preview {
+  padding: 10px;
+}
+
+.lab-card .row-preview__title {
+  font-size: clamp(20px, 3vw, 30px);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-transform: none;
 }
 
 @media (max-width: 560px) {
   .lab-card__grid {
     grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 28px 8px;
+    gap: 14px;
+    min-height: 0;
+    padding: 14px 4px;
   }
 
   .lab-card__title,
@@ -71,8 +89,8 @@
   }
 
   .lab-card__title {
-    max-width: 16ch;
-    font-size: 32px;
+    max-width: 18ch;
+    font-size: 38px;
   }
 
   .lab-card__text p {

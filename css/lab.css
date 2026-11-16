@@ -9,75 +9,84 @@
   width: max-content;
 }
 
-.lab .info-panel {
-  max-height: none;
-  margin-inline: auto;
-  overflow: visible;
-  opacity: 1;
-}
-
-.lab .lab-title {
-  margin: 0;
-  font-size: var(--nav-copy-size);
-  font-weight: 400;
-  line-height: 1.42;
-  letter-spacing: 0.015em;
-  text-transform: none;
-}
-
-.lab-row + .lab-row {
-  border-top: 1px solid var(--line);
-}
-
 .lab .site-main {
   padding-bottom: 80px;
 }
 
-.lab .lab-title--artwork {
+.lab-card {
+  text-decoration: none;
+}
+
+.lab-card__grid {
+  min-height: 220px;
+  align-items: stretch;
+}
+
+.lab-card__title,
+.lab-card__text {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 24px 18px;
+}
+
+.lab-card__title {
+  margin: 0;
+  padding-left: 0;
+  font-size: clamp(26px, 3.8vw, 42px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+
+.lab-card__text p {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--nav-copy-size);
+  line-height: 1.5;
+}
+
+.lab-card__image {
+  display: flex;
+  align-items: center;
   min-width: 0;
 }
 
-.lab .lab-title--artwork img {
-  -webkit-user-drag: none;
-  -webkit-user-select: none;
-  user-select: none;
-  display: block;
+.lab-card__image img {
   width: 100%;
   height: auto;
 }
 
-.lab .lab-row--featured .about-panel__content {
-  --about-divider-space: 16px;
+@media (max-width: 560px) {
+  .lab-card__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 28px 8px;
+  }
+
+  .lab-card__title,
+  .lab-card__text {
+    padding: 0;
+  }
+
+  .lab-card__title {
+    max-width: 16ch;
+    font-size: 32px;
+  }
+
+  .lab-card__text p {
+    font-size: 15px;
+  }
+
+  .lab-card__image {
+    max-width: 360px;
+  }
 }
 
-@media (min-width: 721px) {
-  .lab .lab-row--featured .lab-title--artwork {
-    align-self: end;
-  }
-
-  .lab .lab-row--featured .about-panel__content {
-    display: grid;
-    grid-template-rows: auto minmax(16px, 1fr) auto;
-    aspect-ratio: 1109 / 493;
-  }
-
-  .lab .lab-row--featured .about-panel__actions {
-    grid-row: 1;
-    padding-bottom: 0;
-    border-bottom: 0;
-  }
-
-  .lab .lab-row--featured .about-panel__content::before {
-    content: "";
-    grid-row: 2;
-    align-self: center;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.28);
-  }
-
-  .lab .lab-row--featured .info-panel__copy {
-    grid-row: 3;
-    margin-top: 0;
+@media (hover: none) {
+  .lab-card .row-preview {
+    display: none;
   }
 }
 

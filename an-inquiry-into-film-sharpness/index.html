@@ -12,13 +12,13 @@
     <title>An Inquiry into Film Sharpness — TEDKOLLER</title>
     <link rel="preconnect" href="https://tedkoller.com" crossorigin />
     <link rel="stylesheet" href="https://tedkoller.com/css/styles.css" />
-    <link rel="stylesheet" href="/css/lab.css?v=20261116-type" />
-    <link rel="stylesheet" href="/css/articles.css?v=20261116-type" />
+    <link rel="stylesheet" href="/css/lab.css?v=20261116-sidebar" />
+    <link rel="stylesheet" href="/css/articles.css?v=20261116-sidebar" />
     <link rel="icon" type="image/png" href="/images/favicon.png?v=20261113-red" />
     <link rel="stylesheet" href="/css/footer.css?v=20261113-date" />
   </head>
   <body class="lab">
-    <a class="skip-link" href="#content" aria-label="Skip to content">Lorem ipsum</a>
+    <a class="skip-link" href="#article-title" aria-label="Skip to content">Skip to article</a>
     <header class="site-header">
       <nav class="primary-nav" aria-label="Primary navigation">
         <a class="brand brand--lab" href="/" aria-label="LAB. TEDKOLLER">
@@ -27,10 +27,17 @@
         </a>
       </nav>
     </header>
-    <main class="site-main" id="content">
+    <main class="site-main lab-reader" id="content">
+      <nav class="article-list" aria-label="Articles">
+        <ul>
+            <li><a href="/an-inquiry-into-film-sharpness/" aria-current="page">An Inquiry into Film Sharpness</a></li>
+            <li><a href="/dolor-sit-amet/">Dolor sit amet</a></li>
+            <li><a href="/consectetur-adipiscing/">Consectetur adipiscing</a></li>
+        </ul>
+      </nav>
       <article class="lab-article" aria-labelledby="article-title">
         <header class="article-heading">
-          <h1 id="article-title">An Inquiry into Film Sharpness</h1>
+          <h1 id="article-title" tabindex="-1">An Inquiry into Film Sharpness</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </header>
         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -46,13 +53,10 @@
           <figcaption>Consectetur adipiscing elit.</figcaption>
         </figure>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <nav class="article-nav" aria-label="Article navigation">
-          <a class="action-link" href="/">Lab <svg class="about-panel__arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M9 5h10v10" /></svg></a>
-        </nav>
       </article>
     </main>
     <footer class="site-footer">
-      <span class="footer__update"><a class="action-link" href="https://tedkoller.com/">Tedkoller.com <svg class="about-panel__arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M9 5h10v10" /></svg></a> <time datetime="2026-11-13" title="Last deployed">13.11.2026</time></span>
+      <span class="footer__update"><a class="action-link" href="https://tedkoller.com/">Tedkoller.com <svg class="about-panel__arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M9 5h10v10" /></svg></a> <time datetime="2026-11-16" title="Last deployed">16.11.2026</time></span>
       <a href="mailto:ted@tedkoller.com">Ted@tedkoller.com</a>
     </footer>
   </body>

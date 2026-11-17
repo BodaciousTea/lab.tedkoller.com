@@ -4,13 +4,18 @@
   if (logo) {
     const source = logo.getAttribute("src");
     let replay = 0;
+    const replayLogo = () => {
+      const url = new URL(source, window.location.href);
+      // A fresh image instance restarts the SVG animation, including cached visits.
+      url.searchParams.set("replay", `${Date.now()}-${++replay}`);
+      logo.src = url.href;
+    };
+    window.addEventListener("pageshow", replayLogo);
     brand.setAttribute("aria-label", "LAB. TEDKOLLER — replay animation");
     brand.addEventListener("click", (event) => {
       if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
-      const url = new URL(source, window.location.href);
-      url.searchParams.set("replay", ++replay);
-      logo.src = url.href;
+      replayLogo();
     });
   }
 

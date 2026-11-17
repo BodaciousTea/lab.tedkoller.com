@@ -141,7 +141,7 @@
   grid-template-columns: minmax(0, 1fr) max-content;
   align-items: baseline;
   gap: 20px;
-  padding: 18px 0;
+  padding: 14px 0;
   color: var(--muted);
   text-decoration: none;
   text-align: left;

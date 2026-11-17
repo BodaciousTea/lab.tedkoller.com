@@ -1,5 +1,6 @@
 .lab {
   --ground: #000;
+  --lab-brand-size: 27.6px;
   min-width: 0;
 }
 
@@ -45,17 +46,17 @@
 }
 
 .lab .brand--lab {
-  font-size: 27.6px;
+  font-size: var(--lab-brand-size);
 }
 
 @media (max-width: 820px) {
-  .lab .brand--lab {
-    font-size: 23px;
+  .lab {
+    --lab-brand-size: 23px;
   }
 }
 
 @media (max-width: 560px) {
-  .lab .brand--lab {
-    font-size: 20.7px;
+  .lab {
+    --lab-brand-size: 20.7px;
   }
 }

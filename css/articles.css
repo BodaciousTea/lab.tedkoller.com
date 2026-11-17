@@ -97,7 +97,7 @@
   display: block;
   margin-top: 4px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: var(--nav-copy-size);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.4;

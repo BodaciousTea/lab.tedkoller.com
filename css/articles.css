@@ -25,7 +25,7 @@
   text-align: justify;
   text-align-last: left;
   max-width: 60ch;
-  margin: 32px auto;
+  margin: 16px auto;
   font-size: 16px;
   line-height: 1.65;
 }
@@ -54,10 +54,10 @@
 
 .lab .lab-reader {
   display: grid;
-  grid-template-columns: 200px minmax(0, 1fr);
+  grid-template-columns: 180px minmax(0, 1fr) 180px;
   align-items: start;
-  gap: 64px;
-  width: min(calc(100% - 36px), 1120px);
+  gap: 32px;
+  width: min(calc(100% - 36px), 1256px);
   margin-inline: auto;
   padding-inline: 0;
 }
@@ -88,13 +88,14 @@
 
 .article-list a {
   font-size: var(--lab-brand-size);
+  line-height: 1;
   letter-spacing: -0.025em;
 }
 
 .article-list time,
 .article-picker time {
   display: block;
-  margin-top: 8px;
+  margin-top: 4px;
   color: var(--muted);
   font-size: 13px;
   font-weight: 400;

@@ -2,6 +2,22 @@
   --ground: #000;
   --lab-brand-size: 27.6px;
   min-width: 0;
+  animation: lab-fade-in 260ms ease-out;
+}
+
+@keyframes lab-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab {
+    animation: none;
+  }
 }
 
 .lab .primary-nav {

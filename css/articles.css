@@ -97,6 +97,19 @@
   display: none;
 }
 
+.article-switcher summary::before {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  left: 0;
+  height: 1.3px;
+  background: var(--lab-accent);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 260ms var(--ease);
+}
+
 .article-switcher summary::after {
   position: absolute;
   left: calc(100% + 10px);
@@ -116,9 +129,14 @@
 }
 
 .article-switcher summary:hover,
-.article-switcher details[open] summary,
 .article-switcher summary:focus-visible {
   color: var(--ink);
+}
+
+.article-switcher summary:hover::before,
+.article-switcher summary:focus-visible::before {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .article-switcher ul {

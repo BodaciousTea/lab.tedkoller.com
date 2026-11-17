@@ -16,6 +16,7 @@
 
 .lab {
   --ground: #000;
+  --lab-accent: #c35a26;
   --lab-brand-size: 27.6px;
   min-width: 0;
   animation: lab-fade-in 260ms ease-out;

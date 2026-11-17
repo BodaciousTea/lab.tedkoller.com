@@ -155,7 +155,7 @@
 }
 
 .article-switcher a[aria-current="page"] {
-  color: var(--ink);
+  display: none;
 }
 
 .article-switcher time {

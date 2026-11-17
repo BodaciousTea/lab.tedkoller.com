@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Silkscreen";
+  src: url("../fonts/silkscreen/Silkscreen-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.lab time {
+  font-family: "Silkscreen", monospace;
+  font-weight: 400;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+}
+
 .lab {
   --ground: #000;
   --lab-brand-size: 27.6px;
@@ -53,7 +69,7 @@
   display: inline-block;
   flex: none;
   padding-left: 0.055em;
-  padding-right: 0.025em;
+  padding-right: 0.0125em;
   letter-spacing: 0;
 }
 

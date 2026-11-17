@@ -53,144 +53,136 @@
 
 
 .lab .lab-reader {
-  display: grid;
-  grid-template-columns: 180px minmax(0, 1fr) 180px;
-  align-items: start;
-  gap: 32px;
-  width: min(calc(100% - 36px), 1256px);
+  width: min(calc(100% - 36px), 760px);
   margin-inline: auto;
   padding-inline: 0;
 }
 
-.article-list {
-  position: sticky;
-  top: calc(var(--header-height) + 34px);
-  margin-top: clamp(34px, 7vw, 86px);
+#article-title {
+  scroll-margin-top: 180px;
 }
 
-.article-list ul,
-.article-picker ul {
-  display: grid;
-  gap: 28px;
+/* The article title opens an opaque menu without moving the surrounding copy. */
+.article-switcher {
+  position: relative;
+  z-index: 2;
+  width: 100%;
   margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.article-list a,
-.article-picker a {
-  display: block;
-  color: var(--muted);
-  line-height: 1.1;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.article-list a {
-  font-size: var(--lab-brand-size);
-  line-height: 1;
-  letter-spacing: -0.025em;
-}
-
-.article-list time,
-.article-picker time {
-  display: block;
-  margin-top: 4px;
-  color: var(--muted);
-  font-size: var(--nav-copy-size);
-  font-weight: 400;
-  letter-spacing: 0;
+  font-size: 16px;
   line-height: 1.4;
 }
 
-.article-list a:hover,
-.article-list a:focus-visible,
-.article-list a[aria-current="page"],
-.article-picker a:hover,
-.article-picker a:focus-visible,
-.article-picker a[aria-current="page"] {
+.article-switcher summary {
+  position: relative;
+  display: block;
+  width: fit-content;
+  max-width: calc(100% - 36px);
+  margin-inline: auto;
+  padding: 0;
   color: var(--ink);
+  list-style: none;
+  cursor: pointer;
+  text-align: center;
+  transition: color 160ms ease;
 }
 
-.article-list a[aria-current="page"],
-.article-picker a[aria-current="page"] {
-  font-weight: 600;
+.article-switcher h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
-.article-list a:focus-visible,
-.article-picker a:focus-visible,
-.article-picker summary:focus-visible {
-  outline: 1px solid currentColor;
-  outline-offset: 5px;
-}
-
-.article-picker {
+.article-switcher summary::-webkit-details-marker {
   display: none;
 }
 
-.lab-reader .lab-article {
-  min-width: 0;
+.article-switcher summary::after {
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  margin-top: -5px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg);
+  content: "";
 }
 
-#article-title {
-  scroll-margin-top: calc(var(--header-height) + 34px);
+.article-switcher details[open] summary::after {
+  margin-top: -1px;
+  transform: rotate(225deg);
 }
 
-@media (max-width: 900px) {
-  .lab .lab-reader {
+.article-switcher summary:hover,
+.article-switcher details[open] summary,
+.article-switcher summary:focus-visible {
+  color: var(--ink);
+}
+
+.article-switcher ul {
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 50%;
+  width: min(100%, 560px);
+  transform: translateX(-50%);
+  max-height: min(60vh, 400px);
+  overflow-y: auto;
+  margin: 0;
+  padding: 4px 20px;
+  list-style: none;
+  background: #000;
+  border-block: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.65);
+}
+
+.article-switcher a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  align-items: baseline;
+  gap: 20px;
+  padding: 18px 0;
+  color: var(--muted);
+  text-decoration: none;
+  text-align: left;
+  overflow-wrap: anywhere;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.article-switcher li + li {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.article-switcher a:hover,
+.article-switcher a:focus-visible {
+  color: var(--ink);
+}
+
+.article-switcher a[aria-current="page"] {
+  color: var(--ink);
+}
+
+.article-switcher time {
+  white-space: nowrap;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  .article-switcher ul {
+    padding-inline: 16px;
+  }
+
+  .article-switcher a {
+    gap: 8px 16px;
     grid-template-columns: minmax(0, 1fr);
-    gap: 0;
   }
+}
 
-  .article-list {
-    display: none;
-  }
-
-  .article-picker {
-    display: block;
-    width: min(100%, 760px);
-    margin: 24px auto 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .article-picker summary {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    padding-block: 18px;
-    font-size: 16px;
-    line-height: 1.4;
-    list-style: none;
-    cursor: pointer;
-  }
-
-  .article-picker summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .article-picker summary::after {
-    flex: none;
-    width: 7px;
-    height: 7px;
-    margin-right: 4px;
-    border-right: 1px solid currentColor;
-    border-bottom: 1px solid currentColor;
-    transform: rotate(45deg);
-    content: "";
-  }
-
-  .article-picker details[open] summary::after {
-    transform: rotate(225deg);
-  }
-
-  .article-picker ul {
-    gap: 20px;
-    padding: 6px 0 24px;
-  }
-
-  .article-picker a {
-    font-size: 15px;
-    line-height: 1.3;
-  }
+.article-switcher summary:focus-visible,
+.article-switcher a:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 2px;
 }

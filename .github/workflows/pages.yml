@@ -19,14 +19,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: '3.12'
+          node-version: '22'
       - uses: actions/configure-pages@v5
-      - name: Check article publishing
-        run: python3 -m unittest discover -s scripts -p 'test_*.py'
       - name: Build homepage and article menus
-        run: python3 scripts/build_site.py
+        run: node build.mjs
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site

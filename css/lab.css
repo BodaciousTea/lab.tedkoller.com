@@ -75,32 +75,6 @@ strong {
   user-select: none;
 }
 
-.lab .brand__wordmark {
-  display: block;
-  width: 6.57014em;
-  height: 1em;
-  overflow: visible;
-}
-
-.brand__wordmark a {
-  cursor: pointer;
-}
-
-.brand__wordmark text {
-  fill: var(--ink);
-  font-family: "Kabel", sans-serif;
-  font-size: 27.6px;
-  font-weight: 600;
-}
-
-.brand__wordmark .brand__svg-period {
-  letter-spacing: 0;
-}
-
-.brand__wordmark .brand__svg-name {
-  letter-spacing: -0.69px;
-}
-
 .lab .brand__period {
   display: inline-block;
   flex: none;

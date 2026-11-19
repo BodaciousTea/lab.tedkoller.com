@@ -4,56 +4,330 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+    <meta
+      name="description"
+      content="An inquiry into film sharpness, modulation transfer functions, and the possibility of matching the spatial response of motion picture film through digital image processing."
+    />
     <meta property="og:title" content="An Inquiry into Film Sharpness" />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://lab.tedkoller.com/an-inquiry-into-film-sharpness/" />
-    <link rel="canonical" href="https://lab.tedkoller.com/an-inquiry-into-film-sharpness/" />
+    <meta
+      property="og:url"
+      content="https://lab.tedkoller.com/an-inquiry-into-film-sharpness/"
+    />
+    <link
+      rel="canonical"
+      href="https://lab.tedkoller.com/an-inquiry-into-film-sharpness/"
+    />
     <title>An Inquiry into Film Sharpness — TEDKOLLER</title>
     <link rel="preconnect" href="https://tedkoller.com" crossorigin />
     <link rel="stylesheet" href="https://tedkoller.com/css/styles.css" />
     <link rel="stylesheet" href="/css/lab.css?v=20261117-title-hover" />
     <link rel="stylesheet" href="/css/articles.css?v=20261117-red-underline" />
-    <link rel="icon" type="image/png" href="/images/favicon.png?v=20261113-red" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/favicon.png?v=20261113-red"
+    />
     <link rel="stylesheet" href="/css/footer.css?v=20261113-date" />
   </head>
   <body class="lab">
-    <a class="skip-link" href="#article-title" aria-label="Skip to content">Skip to article</a>
+    <a class="skip-link" href="#article-title" aria-label="Skip to content"
+      >Skip to article</a
+    >
+
     <header class="site-header">
       <nav class="primary-nav" aria-label="Primary navigation">
         <a class="brand brand--lab" href="/" aria-label="LAB. TEDKOLLER">
-          <img class="brand__lab" src="/images/lab-pump-triline-animated.svg" width="5373" height="2511" alt="" aria-hidden="true" draggable="false" />
-          <span class="brand__period" aria-hidden="true">.</span><span class="brand__name" aria-hidden="true">TEDKOLLER</span>
+          <img
+            class="brand__lab"
+            src="/images/lab-pump-triline-animated.svg"
+            width="5373"
+            height="2511"
+            alt=""
+            aria-hidden="true"
+            draggable="false"
+          />
+          <span class="brand__period" aria-hidden="true">.</span
+          ><span class="brand__name" aria-hidden="true">TEDKOLLER</span>
         </a>
       </nav>
     </header>
+
     <main class="site-main lab-reader" id="content">
       <article class="lab-article" aria-labelledby="article-title">
         <header class="article-heading">
           <nav class="article-switcher" aria-label="Articles" data-article-menu>
-            <h1 id="article-title" tabindex="-1">An Inquiry into Film Sharpness</h1>
+            <h1 id="article-title" tabindex="-1">
+              An Inquiry into Film Sharpness
+            </h1>
           </nav>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>
+            On modulation transfer functions, photochemical spatial response,
+            and the digital emulation of film sharpness.
+          </p>
         </header>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+        <p>
+          Chasing the ever so desirable film look, hundreds of plugins, and
+          techniques have arisen for modern digital cameras to replicate the
+          perceivable characteristics of a celluloid motion picture film. The
+          look can be split into different components that all work
+          interconnected with each other to create the final image: color
+          response, grain, halation. An aspect I seldom see mentioned and is
+          clearly overlooked is the sharpness of the image measurable by a
+          <strong>MODULATION TRANSFER FUNCTION (MTF)</strong>, being the focus
+          of this inquiry.
+        </p>
+
+        <p>
+          What are we modulating? What are we transferring? The lens transfers
+          the object scene onto the object image, the scene luminance has been
+          transformed to the image illuminance. As the detail fineness is raised
+          on the object scene, the loss in detail contrast will be raised in the
+          transformed object image. The transferred contrast is being altered as
+          it is moved into higher frequencies. The variation in detail contrast
+          between the two is the transfer function MTF, a measurement of how
+          contrast passes through from the object scene to the object image as
+          it changes its spatial detail. The lens, the film negative stock, the
+          print stock, the digital sensor, are all sample devices that create a
+          MTF, and can have varying degrees of degradation on measurable
+          contrast. The perceived picture sharpness of what you see when a
+          screen is some distance away, is proportional to the square of the
+          area under the MTF curve. (The actual visual perception of sharpness
+          is weighted toward the lower spatial frequencies. MTF vs MTF² curves)
+        </p>
+
         <figure>
-          <img src="/images/lorem-ipsum.svg" width="1200" height="750" alt="Lorem ipsum" />
-          <figcaption>Lorem ipsum dolor sit amet.</figcaption>
+          <!-- Replace with the MTF comparison image -->
+          <img
+            src="/images/lorem-ipsum.svg"
+            width="1200"
+            height="750"
+            alt="Placeholder for MTF and MTF squared curve comparison"
+            loading="lazy"
+          />
+          <figcaption>
+            MTF and MTF² curves illustrating contrast transfer across spatial
+            frequencies.
+          </figcaption>
         </figure>
-        <h2>Dolor sit amet</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+        <p>
+          Picture edge sharpness is largely determined by how high the curve is
+          at the lower frequencies, and picture textures are determined by the
+          midband, which contribute very fine details and low amplitudes, while
+          the resolving power is indistinguishable to humans in a cinematic
+          frame.
+        </p>
+
+        <p>
+          The MTF measures how well an optical or film system transfers contrast
+          from the subject to the final image across different spatial
+          frequencies. Kodak supplies MTF measurements as a curve in their
+          filmstock technical data. If this data can be acquired, it can be
+          utilized as a goal to be matched for an accurate level of sharpness.
+        </p>
+
+        <p>
+          A film’s spatial response can be approximately matched digitally, and
+          a measured spatial filter can do that without simulating every crystal
+          or chemical reaction. The key is deriving the filter from measurements
+          and validating its output. Since both MTF curves can be measured, that
+          of a digital output and a film’s output, the ratio can be calculated.
+          Provided enough data the problem becomes algebraic under a linear,
+          shift-invariant approximation. With the solution determining necessary
+          transformation from measurements to output an emulated filmic result
+          from a digital input, in essence creating our own transformation whose
+          response is described by a digital modulation transfer function.
+        </p>
+
         <figure>
-          <img src="/images/dolor-sit-amet.svg" width="1200" height="750" alt="Dolor sit amet" loading="lazy" />
-          <figcaption>Consectetur adipiscing elit.</figcaption>
+          <img
+            src="MTF_curves_dark.svg"
+            width="1200"
+            height="750"
+            alt="Placeholder for film and digital MTF comparison"
+            loading="lazy"
+          />
+          <figcaption>
+            <span style="color: #3353e1" aria-hidden="true">⬤</span>
+            (A) ARRI Alexa Mini LF measurement
+
+            <span style="color: #d25208" aria-hidden="true">⬤</span>
+            (B) Kodak 5219
+          </figcaption>
         </figure>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        <figure>
+          <math
+            xmlns="http://www.w3.org/1998/Math/MathML"
+            display="block"
+            aria-label="H target of f equals MTF A of f divided by MTF B of f"
+          >
+            <mrow>
+              <msub><mi>H</mi><mtext>target</mtext></msub>
+              <mo>(</mo><mi>f</mi><mo>)</mo>
+              <mo>=</mo>
+              <mfrac>
+                <mrow
+                  ><msub><mi>MTF</mi><mi>A</mi></msub
+                  ><mo>(</mo><mi>f</mi><mo>)</mo></mrow
+                >
+                <mrow
+                  ><msub><mi>MTF</mi><mi>B</mi></msub
+                  ><mo>(</mo><mi>f</mi><mo>)</mo></mrow
+                >
+              </mfrac>
+            </mrow>
+          </math>
+          <br />
+          <figcaption>
+            Target filter under a linear, shift-invariant approximation, where A
+            is the digital output and B is the film output. Frequencies with a
+            zero or near-zero denominator require regularization.
+          </figcaption>
+        </figure>
+
+        <p>
+          <strong>CONCEPTUALLY</strong>, let’s say we have two different MTF
+          curves, one is of a film print (A), which contains the combined
+          spatial response of all the stages in the test (Camera lens, negative,
+          development, printing optics, print stock). And then (B) is a digital
+          image, combined of all of the stages in a digital pipeline. Both of
+          which had the same scene input luminance, in a controlled setting,
+          capturing a resolution test chart. From these samples, MTF data is
+          individually measured and MTF curve charts are created. Mathematically
+          the ratio can be determined, and create a repeatable formula to apply
+          the same MTF curve from B to A, but in practice, how is this actually
+          applied to the digital image?
+        </p>
+
+        <p>
+          Since the MTF is measured at a curve, having the de-sharpening
+          technique applied at the same curve, instead of JUST merely a high and
+          low frequency separation and applying a Gaussian blur to the high
+          frequencies would be a more accurate way to apply the desired effect.
+          A digital replication of softness is commonly a Gaussian blur effect.
+          On an image this reduces high frequency components acting as a low
+          pass filter, but this is applied to the entire selection, as a normal
+          distribution. Even applying at a curve, it is still constructing a
+          normal distribution, just along a curve, what the curve is measuring
+          is not necessarily what a Gaussian blur is executing. Film relies on a
+          physical suspension of irregularly shaped silver halide or dye
+          crystals (grain) embedded in a gelatin emulsion. This random grain
+          structure acts as a physical ceiling that blurs or breaks up
+          ultra-fine details and is the method for which some of the softening
+          is achieved through emulsion.
+        </p>
+
+        <p>
+          These methods of adding a universal blur, even if it is confined to
+          the MTF curve, the actual application of that BLUR is commonly
+          determined with subjectivity and not empirically or accurately.
+        </p>
+
+        <p>
+          Film emulations, or simulations rather, may develop their grain
+          algorithms in such a way to imitate this chemical process of silver
+          crystals, mathematically. The forthcoming in these algorithms is that
+          they do not always encompass a production of the desired measurable
+          filmic softness. If two MTF curves were to be created identically,
+          with the only difference being a digital image capture and a motion
+          picture film exposure, carefully with the same lens, distance,
+          exposures, focus, and sizes, the film exposure will have a different
+          MTF curve, the question then becomes how can this be replicated in a
+          digital postproduction pipeline. For film, high frequency information
+          is lost during exposure (scattering + halation), low to mid frequency
+          acutance is raised during development (DIR couplers), grain
+          reintroduces high frequency information back, and a scanner optical
+          system degrades the image again. In other words, the deeper the analog
+          pipeline is, the more scene information is replaced by emulsion
+          information.
+        </p>
+
+        <p>
+          This photochemical reaction is not equivalent to a normal distribution
+          of a blur, as the film is exposed then developed, and printed,
+          multiple MTFs are occurring.
+        </p>
+
+        <p>
+          In all reality, this model is limited by treating film’s spatial
+          response as one fixed filter. Acting independent of exposure,
+          halation, and grain. So it could not be used alone for an accurate
+          representation. If it were to be used in a post production film look
+          pipeline I propose it must fall after halation and color response, but
+          before grain. These could act as nodes in a OFX/Nuke pipeline,
+          provided that they exchange the information they need and are
+          calibrated as a complete system. Separate does not mean they act
+          completely independently, and they ought not to be completely linear
+          as to allow data and supplication of controls to affect model
+          parameters between separate processes.
+        </p>
+        <br />
+        <figcaption>
+          Halation would contribute to spatial response directly (light
+          spreading before the final image forms, changing edge profiles and
+          contrast at different frequencies) while grain is stochastic.
+        </figcaption>
+        <br />
+
+        <p>
+          <a
+            class="action-link"
+            href="https://w3.impa.br/~lvelho/ip02/papers/sigg97.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Simulating the Photographic Development Process on Digital Images
+            <svg
+              class="about-panel__arrow"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5 19 19 5M9 5h10v10" />
+            </svg>
+          </a>
+        </p>
+
+        <p>
+          <a
+            class="action-link"
+            href="https://www.youtube.com/watch?v=iBKDjLeNlsQ"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Demystifying Digital Cinema Camera Specifications
+            <svg
+              class="about-panel__arrow"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5 19 19 5M9 5h10v10" />
+            </svg>
+          </a>
+        </p>
       </article>
     </main>
+
     <footer class="site-footer">
-      <span class="footer__update"><a class="action-link" href="https://tedkoller.com/">Tedkoller.com <svg class="about-panel__arrow" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M9 5h10v10" /></svg></a> <time datetime="2026-11-16" title="Last deployed">11.16.2026</time></span>
+      <span class="footer__update"
+        ><a class="action-link" href="https://tedkoller.com/"
+          >Tedkoller.com
+          <svg
+            class="about-panel__arrow"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 19 19 5M9 5h10v10" /></svg
+        ></a>
+        <time datetime="2026-11-16" title="Last deployed"
+          >11.16.2026</time
+        ></span
+      >
       <a href="mailto:ted@tedkoller.com">Ted@tedkoller.com</a>
     </footer>
+
     <script src="/js/article-menu.js?v=20261117-compact-replay" defer></script>
   </body>
 </html>

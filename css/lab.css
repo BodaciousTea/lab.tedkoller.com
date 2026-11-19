@@ -6,8 +6,12 @@
   font-display: swap;
 }
 
+strong {
+  font-weight: 600;
+}
+
 .lab time {
-  font-family: "Silkscreen", monospace;
+  font-family: "Silkscreen";
   font-weight: 400;
   font-size: 12px;
   font-variant-numeric: tabular-nums;

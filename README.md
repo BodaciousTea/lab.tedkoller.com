@@ -1,9 +1,26 @@
 # Ted Koller Lab
 
-This is a plain static site. Preview it with any local web server, such as `python3 -m http.server 8765`, then open http://localhost:8765.
+## Write an article
 
-## Article dropdown
+Keep each article in its own HTML file, such as `an-inquiry-into-film-sharpness/index.html`. Copy an existing article to start a new one, replace its content and title, and set its publication date in the head:
 
-Edit the `articles` list in `js/article-menu.js` to add, rename, reorder, or date articles. Every article page loads this shared dropdown at the article title in its original position. The current title and selected link are determined from the page's heading and canonical URL.
+```html
+<meta name="article-date" content="2026-11-18" />
+```
 
-The dropdown works on desktop and mobile, uses native details/summary controls, and closes on Escape or clicking outside it. Its opaque panel keeps the links readable over the article. No build step or template processor is required.
+Use the actual publication date, not the date you last edited it. The newest publication date becomes the homepage. Article pages need the existing `lab-article` element and the `article-title` heading. No central article list needs editing. If two articles have the same publication date, the path breaks the tie consistently.
+
+## Preview
+
+```sh
+python3 scripts/build_site.py
+python3 -m http.server 8765 --directory _site
+```
+
+Open http://localhost:8765. The generated `_site/` folder contains the finished website. Never edit its files or create a separate source `index.html`: the build always creates the homepage from the newest article. Relative images are adjusted for the homepage automatically.
+
+The build also creates the article dropdown on every article page. The homepage and article switching work without browser JavaScript. The logo replays using native SVG animation. No browser JavaScript is used.
+
+## Publish
+
+The Pages workflow builds and deploys `_site/` on every push to `main`. Set the repository's **Settings → Pages → Build and deployment → Source** to **GitHub Actions** once when enabling this workflow. Do not publish the raw source folder with the previous branch-based Pages setup.

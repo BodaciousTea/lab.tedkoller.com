@@ -153,24 +153,26 @@
           <math
             xmlns="http://www.w3.org/1998/Math/MathML"
             display="block"
-            aria-label="H target of f equals MTF B of f divided by MTF A of f"
+            aria-label="Magnitude of H filter of f is approximately equal to MTF target of f divided by MTF source of f"
           >
             <mrow>
-              <msub><mi>H</mi><mtext>target</mtext></msub>
+              <msub><mi>H</mi><mtext>filter</mtext></msub>
               <mo>(</mo><mi>f</mi><mo>)</mo>
-              <mo>=</mo>
+              <mo>|</mo>
+              <mo>≈</mo>
               <mfrac>
-                <mrow
-                  ><msub><mi>MTF</mi><mi>B</mi></msub
-                  ><mo>(</mo><mi>f</mi><mo>)</mo></mrow
-                >
-                <mrow
-                  ><msub><mi>MTF</mi><mi>A</mi></msub
-                  ><mo>(</mo><mi>f</mi><mo>)</mo></mrow
-                >
+                <mrow>
+                  <msub><mi>MTF</mi><mtext>target</mtext></msub>
+                  <mo>(</mo><mi>f</mi><mo>)</mo>
+                </mrow>
+                <mrow>
+                  <msub><mi>MTF</mi><mtext>source</mtext></msub>
+                  <mo>(</mo><mi>f</mi><mo>)</mo>
+                </mrow>
               </mfrac>
             </mrow>
           </math>
+
           <br />
           <figcaption>
             Target filter under a linear, shift-invariant approximation, where A
@@ -247,7 +249,8 @@
           response as one fixed filter. Acting independent of exposure,
           halation, and grain. So it could not be used alone for an accurate
           representation. If it were to be used in a post production film look
-          pipeline I propose it must fall after halation and color response, but
+          pipeline I propose it would be a reasonable design choice for a
+          spacial filter to be applied after halation and color response, but
           before grain. These could act as nodes in a OFX/Nuke pipeline,
           provided that they exchange the information they need and are
           calibrated as a complete system. Separate does not mean they act

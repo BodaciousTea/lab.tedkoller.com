@@ -162,7 +162,7 @@
           <math
             xmlns="http://www.w3.org/1998/Math/MathML"
             display="block"
-            aria-label="H target of f equals MTF A of f divided by MTF B of f"
+            aria-label="H target of f equals MTF B of f divided by MTF A of f"
           >
             <mrow>
               <msub><mi>H</mi><mtext>target</mtext></msub>
@@ -170,11 +170,11 @@
               <mo>=</mo>
               <mfrac>
                 <mrow
-                  ><msub><mi>MTF</mi><mi>A</mi></msub
+                  ><msub><mi>MTF</mi><mi>B</mi></msub
                   ><mo>(</mo><mi>f</mi><mo>)</mo></mrow
                 >
                 <mrow
-                  ><msub><mi>MTF</mi><mi>B</mi></msub
+                  ><msub><mi>MTF</mi><mi>A</mi></msub
                   ><mo>(</mo><mi>f</mi><mo>)</mo></mrow
                 >
               </mfrac>
@@ -190,15 +190,15 @@
 
         <p>
           <strong>CONCEPTUALLY</strong>, let’s say we have two different MTF
-          curves, one is of a film print (A), which contains the combined
+          curves, one is of a film print (B), which contains the combined
           spatial response of all the stages in the test (Camera lens, negative,
-          development, printing optics, print stock). And then (B) is a digital
+          development, printing optics, print stock). And then (A) is a digital
           image, combined of all of the stages in a digital pipeline. Both of
           which had the same scene input luminance, in a controlled setting,
           capturing a resolution test chart. From these samples, MTF data is
           individually measured and MTF curve charts are created. Mathematically
           the ratio can be determined, and create a repeatable formula to apply
-          the same MTF curve from B to A, but in practice, how is this actually
+          the same MTF curve from A to B, but in practice, how is this actually
           applied to the digital image?
         </p>
 

@@ -59,7 +59,7 @@ strong {
   border: 0;
   background: transparent;
   color: inherit;
-  cursor: pointer;
+  cursor: default;
   font-family: "Kabel", sans-serif;
   font-weight: 600;
   white-space: nowrap;

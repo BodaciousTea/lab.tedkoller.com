@@ -4,6 +4,7 @@ import { resolve, dirname, relative, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(process.argv[2] || dirname(fileURLToPath(import.meta.url)));
+const articleRoot = join(root, "articles");
 const out = join(root, "_site");
 const origin = `https://${readFileSync(join(root, "CNAME"), "utf8").trim()}`;
 const walk = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
@@ -11,13 +12,13 @@ const walk = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((entry) 
   const path = join(dir, entry.name);
   return entry.isDirectory() ? walk(path) : path.endsWith(".html") ? [path] : [];
 });
-const articles = walk(root).flatMap((path) => {
+const articles = walk(articleRoot).flatMap((path) => {
   const html = readFileSync(path, "utf8");
   if (!/<article\b[^>]*class="lab-article"/.test(html)) return [];
   const date = html.match(/<meta\s+name="article-date"\s+content="(\d{4}-\d{2}-\d{2})"/)?.[1];
   const title = html.match(/<h1\b[^>]*id="article-title"[^>]*>([\s\S]*?)<\/h1>/)?.[1].replace(/\s+/g, " ").trim();
   if (!date || !title || new Date(date).toISOString().slice(0, 10) !== date) throw Error(`Missing/invalid title or article-date: ${path}`);
-  const file = relative(root, path).replaceAll("\\", "/");
+  const file = relative(articleRoot, path).replaceAll("\\", "/");
   return [{ file, html, date, title, url: `/${file}`.replace(/index\.html$/, "") }];
 }).sort((a, b) => b.date.localeCompare(a.date) || b.url.localeCompare(a.url));
 if (!articles.length) throw Error("No articles found");
@@ -27,8 +28,11 @@ mkdirSync(out);
 writeFileSync(join(out, ".lab-build-output"), "");
 writeFileSync(join(out, ".nojekyll"), "");
 for (const name of readdirSync(root)) {
-  if (/^[._]/.test(name) || ["build.mjs", "README.md", "AGENTS.md", "index.html", "node_modules", "tedkoller-animation-preview.html"].includes(name)) continue;
+  if (/^[._]/.test(name) || ["articles", "build.mjs", "README.md", "AGENTS.md", "index.html", "node_modules"].includes(name)) continue;
   cpSync(join(root, name), join(out, name), { recursive: true });
+}
+for (const name of readdirSync(articleRoot)) {
+  cpSync(join(articleRoot, name), join(out, name), { recursive: true });
 }
 for (const article of articles) {
   const rows = articles.map((item) => `<li><a href="${item === articles[0] ? "/" : item.url}"${item === article ? ' aria-current="page"' : ""}><span>${item.title}</span><time datetime="${item.date}">${item.date.slice(5, 7)}.${item.date.slice(8)}.${item.date.slice(0, 4)}</time></a></li>`).join("\n");

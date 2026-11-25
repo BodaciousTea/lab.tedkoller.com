@@ -80,7 +80,8 @@
   padding: 0;
 }
 
-.article-list a {
+.article-list a,
+.article-list .article-list__project {
   display: grid;
   grid-template-columns: minmax(0, 1fr) max-content;
   align-items: baseline;
@@ -90,12 +91,34 @@
   text-decoration: none;
   text-align: left;
   overflow-wrap: anywhere;
-  transition: color 160ms ease;
 }
 
-.article-list a:hover,
-.article-list a:focus-visible {
+.article-list a {
   color: var(--ink);
+}
+
+.article-list a > span {
+  position: relative;
+  width: fit-content;
+}
+
+.article-list a > span::before {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 260ms var(--ease);
+}
+
+.article-list a:hover > span::before,
+.article-list a:focus-visible > span::before {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .article-list a:focus-visible {
@@ -103,15 +126,30 @@
   outline-offset: 2px;
 }
 
-.article-list time {
+.article-list time,
+.article-list__status {
   white-space: nowrap;
   margin: 0;
   color: var(--muted);
   line-height: 1.4;
 }
 
+.article-list__status {
+  font-family: "Departure Mono", monospace;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .article-list a > span::before {
+    transition: none;
+  }
+}
+
 @media (max-width: 480px) {
-  .article-list a {
+  .article-list a,
+  .article-list .article-list__project {
     gap: 2px 16px;
     grid-template-columns: minmax(0, 1fr);
   }

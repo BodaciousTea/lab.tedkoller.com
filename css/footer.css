@@ -42,4 +42,9 @@
   line-height: inherit;
 }
 
-.site-footer time { white-space: nowrap; }
+.site-footer time {
+  font-family: "Departure Mono", monospace;
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+}

@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Silkscreen";
-  src: url("../fonts/silkscreen/Silkscreen-Regular.ttf") format("truetype");
+  font-family: "Departure Mono";
+  src: url("../fonts/departure-mono/DepartureMono-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -11,7 +11,7 @@ strong {
 }
 
 .lab time {
-  font-family: "Silkscreen";
+  font-family: "Departure Mono";
   font-weight: 400;
   font-size: 12px;
   font-variant-numeric: tabular-nums;
